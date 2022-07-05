@@ -78,9 +78,7 @@ public class Main {
                     } else {
                         int numberOfChildrenThatHaveAGift = newListOfChildren.size();
                         System.out.println("The number of children that are already assigned a gift is => " + numberOfChildrenThatHaveAGift + "!");
-                        System.out.println("Here is a list :)");
-                        System.out.println("");
-                        System.out.println("**********************************");
+                        menu.listSign();
                         newListOfChildren.forEach(System.out::println);
                         menuAgain.printMenuAgain();
                     }
@@ -127,24 +125,28 @@ public class Main {
                         String newPairs;
                         for (int l = 0; l < children.size(); l++) {
                             Collections.shuffle(gifts);
+                            String randomChildagain = children.get(l);
+                            String randomGiftagain = gifts.get(l);
                             newPairs = children.get(l) + " is going to get a " + gifts.get(l);
                             newListOfChildren.add(newPairs);
+                            newListOfRandomChildren.add(randomChildagain);
+                            newListOfRandomGifts.add(randomGiftagain);
                         }
-                        for (int n = 0; n < children.size(); n++) {
-                            children.remove(children.get(n));
-                            gifts.remove(gifts.get(n));
-                        }
+                        children.removeAll(newListOfRandomChildren);
+                        gifts.removeAll(newListOfRandomGifts);
                         newListOfChildren.forEach(System.out::println);
                         menuAgain.printMenuAgain();
-                        break;
                     }
+                    break;
+                case 6:
+                    System.out.println(children.size());
                 default:
                     System.out.println("!!!!!You have entered an invalid symbol, please enter a number from the menu below!!!!!");
                     menuAgain.printMenuAgain();
             }
 
 
-        } while (menuNumber < 6);
+        } while (menuNumber < 7);
 
     }
 }

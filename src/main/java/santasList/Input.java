@@ -25,11 +25,11 @@ public class Input {
     }
     public static String enterName() {
         System.out.println("Please enter a new name you would like to add to the list");
-        return scanner.next();
+        return scanner.nextLine();
     }
     public static String enterGift() {
         System.out.println("Please enter a new gift you would like to add to the list");
-        return scanner.next();
+        return scanner.nextLine();
     }
 
     public void shorterMenu (){
@@ -48,6 +48,12 @@ public class Input {
         System.out.println("                 ----------------------------------------------------------- ");
         System.out.println(" ");
         System.out.println("");
+    }
+
+    public void listSign(){
+        System.out.println("Here is a list :)");
+        System.out.println("");
+        System.out.println("**********************************");
     }
 
 //            public static void randomChildrenList (){
