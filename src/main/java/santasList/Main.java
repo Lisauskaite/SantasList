@@ -41,6 +41,7 @@ public class Main {
         List<String> newListOfChildren = new ArrayList<>();
         List<String> newListOfRandomChildren = new ArrayList<>();
         List<String> newListOfRandomGifts = new ArrayList<>();
+        List<String> newListWithAllNames = new ArrayList<>(children);
 
         int randomNum = ThreadLocalRandom.current().nextInt(1, children.size() + 1);
         String newPair;
@@ -56,6 +57,7 @@ public class Main {
         }
         children.removeAll(newListOfRandomChildren);
         gifts.removeAll(newListOfRandomGifts);
+        newListWithAllNames.addAll(newListOfRandomChildren);
 
         Scanner scanner = new Scanner(System.in);
         Input menu = new Input();
@@ -66,10 +68,7 @@ public class Main {
         int menuNumber;
         do {
             menuNumber = scanner.nextInt();
-
             switch (menuNumber) {
-
-                case 0:
                 case 1:
                     System.out.println("You have chosen to see all the children that have been assigned a gift!");
                     if (newListOfChildren.size() == 0) {
@@ -85,9 +84,14 @@ public class Main {
                     break;
                 case 2:
                     String name = Input.enterName();
-                    children.add(name);
-                    System.out.println("Thank you " + name + " has been added to the list");
-                    menuAgain.printMenuAgain();
+                    if (newListWithAllNames.contains(name)) {
+                        System.out.println("I'm sorry this name is already on the list, please PRESS [2] and try again :)");
+                    }else {
+                        children.add(name);
+                        newListWithAllNames.add(name);
+                        System.out.println("Thank you " + name + " has been added to the list");
+                        menuAgain.printMenuAgain();
+                    }
                     break;
                 case 3:
                     String gift = Input.enterGift();
@@ -139,7 +143,31 @@ public class Main {
                     }
                     break;
                 case 6:
-                    System.out.println(children.size());
+                    if (children.size() == 0){
+                        System.out.println("I'm sorry, all the children already have gifts, if you would like to add another child please PRESS [3]");
+                    }
+                    else{
+                        System.out.println("You have chosen to assign a GIFT to a CHILD :)");
+                        System.out.println("Here is a list of remaining children and gifts, please enter exactly as writen in list");
+                        System.out.println("******* CHILDREN *******");
+                        children.forEach(System.out::println);
+                        System.out.println("******* GIFTS *******");
+                        gifts.forEach(System.out::println);
+                        System.out.println("");
+                        String nameFromList = Input.enterNameFromList();
+                        String giftFromList = Input.enterGiftFromList();
+                        if (children.contains(nameFromList) && gifts.contains(giftFromList)){
+                            String pickedChildAndGift = nameFromList + " is going to get a " + giftFromList;
+                            newListOfChildren.add(pickedChildAndGift);
+                            System.out.println("Great! " + pickedChildAndGift);
+                            menu.printMenuAgain();
+                        }
+                        else{
+                            System.out.println("I'm sorry there is no such name or gift is in our list, please press [6] and try again");
+
+                        }
+                    }
+                    break;
                 default:
                     System.out.println("!!!!!You have entered an invalid symbol, please enter a number from the menu below!!!!!");
                     menuAgain.printMenuAgain();
