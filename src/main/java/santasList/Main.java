@@ -86,7 +86,7 @@ public class Main {
                     String name = Input.enterName();
                     if (newListWithAllNames.contains(name)) {
                         System.out.println("I'm sorry this name is already on the list, please PRESS [2] and try again :)");
-                    }else {
+                    } else {
                         children.add(name);
                         newListWithAllNames.add(name);
                         System.out.println("Thank you " + name + " has been added to the list");
@@ -104,16 +104,16 @@ public class Main {
                         System.out.println("Congratulations! all the children have an assigned gift! The list is empty");
                     } else {
                         System.out.println("You have chosen to see the list of children and gifts that are unassigned");
-                        System.out.println("");
+                        System.out.println(" ");
                         int numberOfChildrenThatDontHaveAGift = children.size();
                         System.out.println("The number of children that still don't have a gift is => " + numberOfChildrenThatDontHaveAGift + "! HERE IS A LIST:");
-                        System.out.println("");
+                        System.out.println(" ");
                         System.out.println("**********************************");
                         children.forEach(System.out::println);
-                        System.out.println("");
-                        int numberOfGiftsStillunassigned = gifts.size();
-                        System.out.println("the number of gifts still unassigned is => " + numberOfGiftsStillunassigned + "! HERE IS A LIST:");
-                        System.out.println("");
+                        System.out.println(" ");
+                        int numberOfGiftsStillUnassigned = gifts.size();
+                        System.out.println("the number of gifts still unassigned is => " + numberOfGiftsStillUnassigned + "! HERE IS A LIST:");
+                        System.out.println(" ");
                         System.out.println("**********************************");
                         gifts.forEach(System.out::println);
                         menuAgain.printMenuAgain();
@@ -125,7 +125,7 @@ public class Main {
                     } else {
                         System.out.println("You have chosen to randomly assign a gift to all the children that don't have gifts yet");
                         System.out.println("here is your new list :)");
-                        System.out.println("");
+                        System.out.println(" ");
                         String newPairs;
                         for (int l = 0; l < children.size(); l++) {
                             Collections.shuffle(gifts);
@@ -152,17 +152,16 @@ public class Main {
                         children.forEach(System.out::println);
                         System.out.println("******* GIFTS *******");
                         gifts.forEach(System.out::println);
-                        System.out.println("");
+                        System.out.println(" ");
                         String nameFromList = Input.enterNameFromList();
                         String giftFromList = Input.enterGiftFromList();
-                        if (children.contains(nameFromList) && gifts.contains(giftFromList)){
+                        if (children.contains(nameFromList) && gifts.contains(giftFromList)) {
                             String pickedChildAndGift = nameFromList + " is going to get a " + giftFromList;
                             newListOfChildren.add(pickedChildAndGift);
                             System.out.println("Great! " + pickedChildAndGift);
                             menu.printMenuAgain();
-                        }
-                        else{
-                            System.out.println("I'm sorry there is no such name or gift is in our list, please press [6] and try again");
+                        } else {
+                            System.out.println("I'm sorry there is no such name and/or gift is in our list, please press [6] and try again");
 
                         }
                     }
@@ -170,10 +169,10 @@ public class Main {
                 default:
                     System.out.println("!!!!!You have entered an invalid symbol, please enter a number from the menu below!!!!!");
                     menuAgain.printMenuAgain();
+                    break;
             }
 
-
-        } while (menuNumber < 7);
+        } while (menuNumber < 1000);
 
     }
 }
