@@ -1,15 +1,15 @@
 # Santas List
 
 ## About the program
-This is a program for helping out santa. It has a list of children and gifts inside that you can reach and modify with the menu provided.
+This is a program for helping out Santa. It has a list of children and gifts inside that you can reach and modify with the menu provided.
 
 ## Functions
 In the main window there is a menu with 6 different options. There are two lists with 14 items each for children and gifts.
 everytime you run the code a random number of children will be assigned a random gift (gifts repeat)
 
-OPTION [1]  
+OPTION [1] - _See all the children that have been assigned a gift._ 
 
-_See all the children that have been assigned a gift._ By entering [1] you will be shown how many children have already been assigned a gift and the list with names.
+By entering [1] you will be shown how many children have already been assigned a gift and the list with names.
 If the code assigned 0 kids their gifts. there will be a message saying it. after it generated the list, there will be a menu to choose another option.
 
 OPTION [2]
