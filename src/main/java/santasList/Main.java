@@ -143,10 +143,9 @@ public class Main {
                     }
                     break;
                 case 6:
-                    if (children.size() == 0){
-                        System.out.println("I'm sorry, all the children already have gifts, if you would like to add another child please PRESS [3]");
-                    }
-                    else{
+                    if (children.size() == 0) {
+                        System.out.println("I'm sorry, all the children already have gifts, if you would like to add another child please PRESS [2]");
+                    } else {
                         System.out.println("You have chosen to assign a GIFT to a CHILD :)");
                         System.out.println("Here is a list of remaining children and gifts, please enter exactly as writen in list");
                         System.out.println("******* CHILDREN *******");
