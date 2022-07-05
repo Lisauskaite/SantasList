@@ -14,14 +14,14 @@ public class Input {
         System.out.println("*   PRESS [5] To randomly assign a gift to all the children that don't have gifts yet    *");
         System.out.println("*   PRESS [6] to assign a specific gift to a specific child                              *");
         System.out.println("******************************************************************************************");
-        System.out.println("");
+        System.out.println(" ");
     }
 
     public void printMenuAgain () {
-        System.out.println("");
+        System.out.println(" ");
         System.out.println("                 ****************************************************");
         System.out.println("                     Please choose what else would you like to do");
-        System.out.println("");
+        System.out.println(" ");
         shorterMenu();
     }
     public static String enterName() {
@@ -56,12 +56,12 @@ public class Input {
         System.out.println("                  HI THERE! CHOOSE ONE OF THE OPTIONS IN THE MENU PLEASE :) ");
         System.out.println("                 ----------------------------------------------------------- ");
         System.out.println(" ");
-        System.out.println("");
+        System.out.println(" ");
     }
 
     public void listSign(){
         System.out.println("Here is a list :)");
-        System.out.println("");
+        System.out.println(" ");
         System.out.println("**********************************");
     }
 }
